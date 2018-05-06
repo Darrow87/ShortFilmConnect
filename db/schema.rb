@@ -23,9 +23,14 @@ ActiveRecord::Schema.define(version: 20180506150707) do
   add_index "comments", ["project_id"], name: "index_comments_on_project_id"
 
   create_table "projects", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "description"
+    t.string   "city"
+    t.string   "state"
+    t.string   "genre"
+    t.string   "equipment"
+    t.string   "needed_equipment"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "projects_tags", id: false, force: :cascade do |t|
@@ -51,8 +56,13 @@ ActiveRecord::Schema.define(version: 20180506150707) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "bio"
+    t.string   "role"
+    t.string   "equipment"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end
