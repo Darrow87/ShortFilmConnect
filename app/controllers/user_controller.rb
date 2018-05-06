@@ -1,5 +1,7 @@
 class UserController < ApplicationController
-  has_secure_password
+
   def show
+    @user = User.params[:id]
   end
+
 end
