@@ -1,1 +1,6 @@
+
 <%= @user.name %>, <%= @user.email %>
+
+<% if logged_in? %>
+<p><%= link_to 'Log Out', logout_path, method: :delete %></p>
+<% end %>
