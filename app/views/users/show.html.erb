@@ -1,4 +1,6 @@
-<%= flash[:success] %>
+<% flash.each do |message_type, message| %>
+  <%= message %>
+<% end %>
 
 <%= @user.name %>, <%= @user.email %>
 
