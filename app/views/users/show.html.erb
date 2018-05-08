@@ -1,6 +1,7 @@
+<%= flash[:success] %>
 
 <%= @user.name %>, <%= @user.email %>
 
-<% if logged_in? %>
 <p><%= link_to 'Log Out', logout_path, method: :delete %></p>
-<% end %>
+<p><%= link_to 'Settings', edit_user_path(current_user) %></p>
+
