@@ -3,7 +3,9 @@ module SessionsHelper
     sessions[:user_id] = user.id
   end
 
-  @current_user ||= User.find_by(id: session[:user_id])
+  def current_user
+    @current_user ||= User.find_by(id: sessions[:user_id])
+  end
 
   def logged_in
     !current_user.nil?
