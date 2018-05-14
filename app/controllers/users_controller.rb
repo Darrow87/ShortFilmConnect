@@ -13,6 +13,7 @@ before_action :correct_user, only: [:edit, :update]
   def create
     @user = User.new(user_params)
     if @user.save
+      flash[:success] = "Welcome! Let's collaborate!"
       log_in(@user)
       redirect_to(@user)
     else
